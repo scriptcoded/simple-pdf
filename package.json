@@ -1,0 +1,44 @@
+{
+  "name": "simple-pdf",
+  "version": "0.1.0",
+  "description": "A simple PDF parser based on PDF.js",
+  "main": "lib/index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "example:events": "npm run build && node examples/events.js",
+    "example:promises": "npm run build && node examples/promises.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scriptcoded/simple-pdf.git"
+  },
+  "keywords": [
+    "pdf",
+    "pdf.js",
+    "parser"
+  ],
+  "author": "Malcolm Nihlén <malcolm.nihlen@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scriptcoded/simple-pdf/issues"
+  },
+  "homepage": "https://github.com/scriptcoded/simple-pdf#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "babel-preset-airbnb": "^5.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "pdfjs-dist": "^2.3.200",
+    "sharp": "^0.25.2"
+  }
+}
