@@ -21,6 +21,10 @@ jobs:
         with:
           name: lib
           path: lib
+      - uses: actions/upload-artifact@master
+        with:
+          name: node_modules
+          path: node_modules
 
   publish-npm:
     needs: build
@@ -34,6 +38,9 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: lib
+      - uses: actions/download-artifact@v1
+        with:
+          name: node_modules
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
