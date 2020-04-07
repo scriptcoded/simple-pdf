@@ -22,20 +22,6 @@ jobs:
           name: lib
           path: lib
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - uses: actions/download-artifact@v1
-        with:
-          name: lib
-      - run: npm run test
-
   publish-npm:
     needs: test
     runs-on: ubuntu-latest
