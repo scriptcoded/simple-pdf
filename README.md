@@ -1,6 +1,7 @@
 # simple-pdf
 
 [![npm](https://img.shields.io/npm/v/simple-pdf)](https://www.npmjs.com/package/simple-pdf)
+[![david-dm](https://david-dm.org/scriptcoded/simple-pdf.svg)](https://david-dm.org/scriptcoded/simple-pdf)
 
 `simple-pdf` aims to be a simple drop-in module for extracting text and images
 from PDF files. It exposes a promise-based and an event-based API.
