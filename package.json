@@ -1,6 +1,6 @@
 {
   "name": "simple-pdf",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A simple PDF parser based on PDF.js",
   "main": "lib/index.js",
   "directories": {
