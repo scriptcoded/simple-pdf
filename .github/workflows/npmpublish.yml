@@ -17,8 +17,12 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm run build
+      - uses: actions/upload-artifact@master
+        with:
+          name: lib
+          path: lib
 
-  publish-npm:
+  test:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -27,7 +31,23 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - uses: actions/download-artifact@v1
+        with:
+          name: lib
+      - run: npm run test
+
+  publish-npm:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - uses: actions/download-artifact@v1
+        with:
+          name: lib
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
