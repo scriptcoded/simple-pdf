@@ -1,6 +1,7 @@
 import EventEmitter from 'events';
 import sharp from 'sharp';
 import PDFJS from 'pdfjs-dist';
+import PDFJSWorker from 'pdfjs-dist/build/pdf.worker.entry';
 
 import NodeCanvasFactory from './NodeCanvasFactory';
 
@@ -176,6 +177,7 @@ export default class SimplePDFParser extends EventEmitter {
    * resolves with an object containing text and image elements separately.
    */
   async parseRaw() {
+    PDFJS.GlobalWorkerOptions.workerSrc = PDFJSWorker;
     const loadingTask = PDFJS.getDocument(new Uint8Array(this.fileBuffer));
     const pdf = await loadingTask.promise;
 
