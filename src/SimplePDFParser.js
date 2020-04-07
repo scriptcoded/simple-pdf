@@ -115,15 +115,17 @@ export default class SimplePDFParser extends EventEmitter {
         });
       }
 
-      for (let j = 0; j < pages[i].imageElements.length; j += 1) {
-        const element = pages[i].imageElements[j];
+      if (pages[i].imageElements) {
+        for (let j = 0; j < pages[i].imageElements.length; j += 1) {
+          const element = pages[i].imageElements[j];
 
-        elements.push({
-          type: 'image',
-          pageIndex: i,
-          y: element.y,
-          imageBuffer: element.imageBuffer,
-        });
+          elements.push({
+            type: 'image',
+            pageIndex: i,
+            y: element.y,
+            imageBuffer: element.imageBuffer,
+          });
+        }
       }
     }
 
