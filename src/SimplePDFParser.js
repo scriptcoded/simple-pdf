@@ -63,6 +63,11 @@ const DEFAULT_PARSER_OPTIONS = {
    * Default: `false`
    */
   joinParagraphs: false,
+  /**
+   * Controls what format the image is exported as. Defaults to 'png'. Passed
+   * directly to Sharp: https://sharp.pixelplumbing.com/api-output#toformat
+   */
+  imageOutputFormat: 'png',
 };
 
 /**
@@ -344,6 +349,7 @@ export default class SimplePDFParser extends EventEmitter {
             width: Math.round(elem.width * this.options.imageScale),
             height: Math.round(elem.height * this.options.imageScale),
           })
+          .toFormat(this.options.imageOutputFormat)
           .toBuffer(),
       })));
     }
