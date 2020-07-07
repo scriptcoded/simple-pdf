@@ -74,6 +74,7 @@ new SimplePDFParser(fileBuffer, {
 |`extractImages`|boolean|`true`|Controls whether or not to extract images. Image extraction requires rendering of each page, which might take a long time depending on the size of the PDF, configured `imageScale` and underlying hardware. If you don't need to extract images, setting this option to `false` is recommended.
 |`ignoreEmptyText`|boolean|`true`|Controls whether or not to ignore empty text elements. Text elements are considered empty if their text content contains nothing by whitespace.
 |`joinParagraphs`|boolean|`false`|Controls whether or not to join paragraphs. Enabling this option will join each line that's not separated by a non-text element (paragraph break or image) which will effectively make each line contain a paragraph. Paragraph breaks will be omitted from the final output. This option only affects the `parse` method.
+|`imageOutputFormat`|string|`png`|Controls what format the image is exported as. Defaults to 'png'. Passed directly to Sharp: https://sharp.pixelplumbing.com/api-output#toformat
 
 ### Basic parsing
 
