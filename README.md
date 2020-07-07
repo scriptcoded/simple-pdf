@@ -16,6 +16,7 @@ from PDF files. It exposes a promise-based and an event-based API.
   - [Options](#options)
   - [Basic parsing](#basic-parsing)
   - [Advanced parsing](#advanced-parsing)
+- [Tests](#tests)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -32,9 +33,9 @@ Let's be real. This might not be the library for you. Here are a few reasons why
 - **New to the game** - This library is brand new and haven't been battle tested yet. If you're looking for a reliable solution, this library might not be the best choice for you.
 - **No automated testing** - Though I'm working on this 🙃
 
-## Minimal example
+## Examples
 
-More examples can be found in the `examples` directory
+**Minimal example:**
 
 ```javascript
 const fs = require('fs');
@@ -47,6 +48,13 @@ const parser = new SimplePDFParser(fileBuffer);
 parser.parse().then((result) => {
   console.log(result)
 });
+```
+
+More examples can be found in the `examples` directory and can be run with the following commands:
+
+```bash
+npm run example:events
+npm run example:promises
 ```
 
 ## Installation
@@ -153,6 +161,14 @@ const result = await parser.parseRaw()
     imageBuffer: Buffer
   }]
 }
+```
+
+## Tests
+
+Tests can be run with with the following commands:
+```bash
+npm run build
+npm run test
 ```
 
 ## Contributing
