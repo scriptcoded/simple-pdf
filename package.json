@@ -12,7 +12,7 @@
     "example:events": "npm run build && node examples/events.js",
     "example:promises": "npm run build && node examples/promises.js",
     "test": "jest",
-    "release": "./scripts/release.se"
+    "release": "./scripts/release.sh"
   },
   "repository": {
     "type": "git",
