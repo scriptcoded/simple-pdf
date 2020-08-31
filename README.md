@@ -1,7 +1,7 @@
 # simple-pdf
 
 [![npm](https://img.shields.io/npm/v/simple-pdf)](https://www.npmjs.com/package/simple-pdf)
-[!![Tests](https://github.com/scriptcoded/simple-pdf/workflows/Tests/badge.svg?branch=master)](https://github.com/scriptcoded/simple-pdf/actions?query=workflow%3ATests+branch%3Amaster)
+[![Tests](https://github.com/scriptcoded/simple-pdf/workflows/Tests/badge.svg?branch=master)](https://github.com/scriptcoded/simple-pdf/actions?query=workflow%3ATests+branch%3Amaster)
 [![david-dm](https://david-dm.org/scriptcoded/simple-pdf.svg)](https://david-dm.org/scriptcoded/simple-pdf)
 
 `simple-pdf` aims to be a simple drop-in module for extracting text and images
@@ -30,7 +30,7 @@ from PDF files. It exposes a promise-based and an event-based API.
 Let's be real. This might not be the library for you. Here are a few reasons why.
 
 - **Slow with images** - Images can be embedded in a PDF in many different ways. To ensure that all types of images can be extracted we render the whole PDF and then use [sharp](https://github.com/lovell/sharp) to extract the images from the rendered page. This adds extra processing time for pages that contains images (provided that you don't disable image extraction).
-- **New to the game** - This library is brand new and haven't been battle tested yet. If you're looking for a reliable solution, this library might not be the best choice for you.
+- **New to the game** - This library is brand new and hasn't been battle tested yet. If you're looking for a reliable solution, this library might not be the best choice for you.
 - **No automated testing** - Though I'm working on this 🙃
 
 ## Examples
@@ -38,16 +38,16 @@ Let's be real. This might not be the library for you. Here are a few reasons why
 **Minimal example:**
 
 ```javascript
-const fs = require('fs');
-const { SimplePDFParser } = require('simple-pdf');
+const fs = require('fs')
+const { SimplePDFParser } = require('simple-pdf')
 
-const fileBuffer = fs.readFileSync('somefile.pdf');
+const fileBuffer = fs.readFileSync('somefile.pdf')
 
-const parser = new SimplePDFParser(fileBuffer);
+const parser = new SimplePDFParser(fileBuffer)
 
 parser.parse().then((result) => {
   console.log(result)
-});
+})
 ```
 
 More examples can be found in the `examples` directory and can be run with the following commands:
@@ -126,15 +126,15 @@ const parser = new SimplePDFParser(fileBuffer)
 
 // Called with each page
 parser.on('page', (page) => {
-  console.log(`Page ${page.index}:`);
-  console.log('Text elements: ', page.textElements);
-  console.log('Image elements:', page.imageElements);
-});
+  console.log(`Page ${page.index}:`)
+  console.log('Text elements: ', page.textElements)
+  console.log('Image elements:', page.imageElements)
+})
 
 // Called when the parsing is finished
 parser.on('done', () => {
-  console.log('Parser done');
-});
+  console.log('Parser done')
+})
 
 // This must be run even if you just use the events API, but then you may ignore the return value
 const result = await parser.parseRaw()
@@ -162,6 +162,19 @@ const result = await parser.parseRaw()
   }]
 }
 ```
+
+## Roadmap
+
+More of a todo, but let's call it a roadmap
+
+- [ ] Tests
+  - [ ] Better coverage
+  - [ ] Windows - Something is wrong either with the library or the tests (https://github.com/scriptcoded/simple-pdf/runs/1048499489)
+- [ ] Make a logo (everyone likes  a logo)
+- [ ] Rewrite codebase in TypeScript
+- [ ] Improve image extraction
+- [ ] Set up automatic CI/CD pipeline for NPM deployment
+- [ ] Simplify the API
 
 ## Tests
 
