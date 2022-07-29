@@ -4,6 +4,8 @@
 [![Tests](https://github.com/scriptcoded/simple-pdf/workflows/Tests/badge.svg?branch=master)](https://github.com/scriptcoded/simple-pdf/actions?query=workflow%3ATests+branch%3Amaster)
 [![david-dm](https://david-dm.org/scriptcoded/simple-pdf.svg)](https://david-dm.org/scriptcoded/simple-pdf)
 
+> ⚠️ I currently don't have the time to actively maintain this repo. That being said I greatly welcome PRs and issues and will try to respond ASAP.
+
 `simple-pdf` aims to be a simple drop-in module for extracting text and images
 from PDF files. It exposes a promise-based and an event-based API.
 
