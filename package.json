@@ -46,6 +46,6 @@
     "@babel/runtime": "^7.11.2",
     "canvas": "^2.6.1",
     "pdfjs-dist": "^2.4.456",
-    "sharp": "^0.26.0"
+    "sharp": "^0.30.5"
   }
 }
