@@ -1,26 +1,42 @@
+# ⚠️ On the state of this package ⚠️
+
+I currently don't have the time to actively maintain this repo. That being
+said I still believe that this library is of good use to anyone looking to
+work with PDFs in Node as it simplifies a lot of what's cumbersome with PDFs,
+but currently I can't recommend anyone to use it in production as I cannot
+actively maintain it. I do however greatly welcome PRs and issues and will try
+to respond ASAP.
+
+**If your company would benefit from using this package**, please consider
+[sponsoring me](https://github.com/sponsors/scriptcoded) and the package's
+continued development and feel free to [reach
+out](https://github.com/scriptcoded) with any questions regarding maintenance.
+
 # simple-pdf
 
 [![npm](https://img.shields.io/npm/v/simple-pdf)](https://www.npmjs.com/package/simple-pdf)
 [![Tests](https://github.com/scriptcoded/simple-pdf/workflows/Tests/badge.svg?branch=master)](https://github.com/scriptcoded/simple-pdf/actions?query=workflow%3ATests+branch%3Amaster)
 [![david-dm](https://david-dm.org/scriptcoded/simple-pdf.svg)](https://david-dm.org/scriptcoded/simple-pdf)
 
-> ⚠️ I currently don't have the time to actively maintain this repo. That being said I greatly welcome PRs and issues and will try to respond ASAP.
-
 `simple-pdf` aims to be a simple drop-in module for extracting text and images
 from PDF files. It exposes a promise-based and an event-based API.
 
 ## Table of contents
-- [Features](#features)
-- [Reasons not to use this library](#reasons-not-to-use-this-library)
-- [Minimal example](#minimal-example)
-- [Installation](#installation)
-- [Docs](#docs)
-  - [Options](#options)
-  - [Basic parsing](#basic-parsing)
-  - [Advanced parsing](#advanced-parsing)
-- [Tests](#tests)
-- [Contributing](#contributing)
-- [License](#license)
+- [⚠️ On the state of this package ⚠️](#️-on-the-state-of-this-package-️)
+- [simple-pdf](#simple-pdf)
+  - [Table of contents](#table-of-contents)
+  - [Features](#features)
+  - [Reasons not to use this library](#reasons-not-to-use-this-library)
+  - [Examples](#examples)
+  - [Installation](#installation)
+  - [Docs](#docs)
+    - [Options](#options)
+    - [Basic parsing](#basic-parsing)
+    - [Advanced parsing](#advanced-parsing)
+  - [Roadmap](#roadmap)
+  - [Tests](#tests)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Features
 
